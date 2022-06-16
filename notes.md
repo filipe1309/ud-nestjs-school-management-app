@@ -20,5 +20,8 @@ npm install @nestjs/cli -g
 ```
 docker-compose run --rm nest_npm npm install graphql graphql-tools apollo-server-express @nestjs/graphql
 ```
-## CLASS-116
+## CLASS-117
 
+```
+docker-compose run --rm nest_npm nest g module lesson
+```
