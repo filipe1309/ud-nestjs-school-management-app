@@ -18,7 +18,7 @@ npm install @nestjs/cli -g
 ## CLASS-115
 
 ```
-docker-compose run --rm nest_npm npm install graphql graphql-tools apollo-server-express @nestjs/graphql
+docker-compose run --rm nest_npm npm install graphql graphql-tools apollo-server-express @nestjs/graphql @nestjs/apollo
 ```
 ## CLASS-117
 
@@ -29,3 +29,10 @@ docker-compose run --rm nest_npm nest g module lesson
 
 ## CLASS-119
 
+GraphQL  
+
+Resolver = Controller  
+
+Queries = Retrieve data  
+
+Mutation = Creating new data OR Change existing data  
