@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  mongo:
+    image: mongo:4.0.24
+    # restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=school-management
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=12345
+      - MONGO_APPLICATION_DATABASE=school-management
+      - MONGO_APPLICATION_USERNAME=devdotrun
+      - MONGO_APPLICATION_PASSWORD=123mudar
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data:/data/db
+      # - ./.docker/mongo/init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js
+
+  mongo-express:
+    image: mongo-express:0.54.0
+    ports:
+      - 8081:8081
+    environment:
+      - ME_CONFIG_MONGODB_SERVER=mongo
+      - ME_CONFIG_BASICAUTH_USERNAME=devdotrun
+      - ME_CONFIG_BASICAUTH_PASSWORD=123mudar
+      - ME_CONFIG_MONGODB_PORT=27017
+      - ME_CONFIG_MONGODB_ADMINUSERNAME=root
+      - ME_CONFIG_MONGODB_ADMINPASSWORD=12345
+    depends_on:
+      - mongo
+
+  app:
+    build:
+      context: ./
+      dockerfile: ./docker/app/Dockerfile
+    entrypoint: ./docker/app/entrypoint.sh
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node/app
+    depends_on:
+      - mongo
