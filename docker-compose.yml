@@ -42,10 +42,9 @@ services:
       - .:/home/node/app
     depends_on:
       - mongo
-
-  nest_npm:
-    build:
-      context: ./
-      dockerfile: ./docker/Dockerfile
-    volumes:
-      - .:/home/node/app
+  # nest_npm:
+  #   build:
+  #     context: ./
+  #     dockerfile: ./docker/Dockerfile
+  #   volumes:
+  #     - .:/home/node/app
