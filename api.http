@@ -6,8 +6,25 @@ POST http://localhost:3000/graphql
 Content-Type: application/json
 
 {
-  "query": "{ lesson { name startDate } }"
+  "query": "{ lesson(id: \"cec57d7d-863f-4e98-a585-238749bac7c3\") { name startDate } }"
 }
+
+# query {
+#   lesson(id: "cec57d7d-863f-4e98-a585-238749bac7c3") {
+#     name
+#   }
+# }
+
+
+# {
+#   "query": "{ lesson { name startDate } }"
+# }
+
+# query {
+#   lesson {
+#     name
+#   }
+# }
 
 ### Mutation
 
@@ -17,3 +34,13 @@ Content-Type: application/json
 {
   "mutation": "{ createLesson(name: \"Physics Class\", startDate: \"2020-03-28T18:00:00Z\", endDate: \"2020-03-28T18:30:00Z\") { name } }"
 }
+
+# mutation {
+#   createLesson(
+#     name: "Physics Class",
+#     startDate: "2020-03-28T18:00:00Z",
+#     endDate: "2020-03-28T18:30:00Z"
+#   ) {
+#     name
+#   }
+# }
