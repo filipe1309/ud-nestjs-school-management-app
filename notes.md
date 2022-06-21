@@ -59,3 +59,5 @@ docker-compose run --rm nest_npm npm install uuid
 ```
 docker-compose run --rm nest_npm npm install class-validator class-transformer
 ```
+## CLASS-126
+
