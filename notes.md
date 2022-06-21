@@ -40,3 +40,6 @@ Mutation = Creating new data OR Change existing data
 
 ## CLASS-121
 
+```
+docker-compose run --rm nest_npm npm install typeorm @nestjs/typeorm mongodb @types/mongodb
+```
