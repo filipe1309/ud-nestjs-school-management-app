@@ -26,6 +26,12 @@ Content-Type: application/json
 #   }
 # }
 
+# query {
+#   lessons {
+#     name
+#   }
+# }
+
 ### Mutation
 
 POST http://localhost:3000/graphql

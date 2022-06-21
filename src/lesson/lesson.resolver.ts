@@ -7,6 +7,11 @@ import { LessonType } from './lesson.type';
 export class LessonResolver {
   constructor(private readonly lessonService: LessonService) {}
 
+  @Query((returns) => [LessonType])
+  lessons() {
+    return this.lessonService.getLessons();
+  }
+
   @Query((returns) => LessonType)
   lesson(@Args('id') id: string) {
     return this.lessonService.getLesson(id);
