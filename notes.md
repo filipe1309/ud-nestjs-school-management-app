@@ -45,3 +45,8 @@ docker-compose run --rm nest_npm npm install typeorm @nestjs/typeorm mongodb @ty
 ```
 ## CLASS-122
 
+```
+docker-compose run --rm nest_npm nest g service lesson --no-spec
+
+docker-compose run --rm nest_npm npm install uuid
+```
