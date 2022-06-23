@@ -64,3 +64,14 @@ Content-Type: application/json
 #     name
 #   }
 # }
+
+
+# mutation {
+#   createStudent(createStudentInput: {
+#     firstName: "John",
+#     lastName: "Doe"
+#   }) {
+#     id
+#     firstName
+#   }
+# }
