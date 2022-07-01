@@ -2,6 +2,8 @@
 
 > notes taken during the course
 
+https://github.com/arielweinberger/nestjs-course-gql-mongodb
+
 ## CLASS-113
 
 ```
