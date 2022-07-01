@@ -17,10 +17,11 @@ This project was developed following Udemy's "[NestJS Zero to Hero - Modern Type
 ## :computer: Technologies
 
 - [Node.js](https://nodejs.org/en/)
-- [Nest.js]()
-- [GraphQL]()
-- [TypeORM]()
+- [Nest.js](https://nestjs.com/)
+- [GraphQL](https://graphql.org/)
+- [TypeORM](https://typeorm.io/)
 - [MongoDB](https://www.mongodb.com/)
+- [MongoDb Express](https://www.mongodb.com/products/mongo-express)
 - [Docker](https://www.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
@@ -45,7 +46,90 @@ cd ud-nestjs-school-management-app
 docker-compose up
 ```
 
-> Access http://localhost
+> Access http://localhost:3000  to see the application
+> Access http://localhost:3000/graphql to see the GraphQL playground  
+> Access http://localhost:8081 to see the MongoDB Express  
+
+### GraphQL examples
+
+#### Mutations
+
+```graphql
+mutation {
+  createStudent(createStudentInput: {
+    firstName: "John",
+    lastName: "Doe"
+  }) {
+    id
+    firstName
+  }
+}
+
+mutation {
+  createLesson(
+    createLessonInput: {
+      name: "NestJS5 with students",
+      startDate: "2020-03-28T17:00:00Z",
+      endDate: "2020-03-28T17:30:00Z",
+      students:[
+        "e1b4e577-c8c9-4c56-8c7e-05bbe33f7355",
+        "b6836795-2238-4ff2-a682-8a378743bf28",
+        "568dbaa7-6170-4a1a-921d-6f72fa779125"
+      ]
+    }
+  ) {
+    id
+    name
+    students {
+      firstName
+    }
+  }
+}
+
+mutation {
+  assignStudentsToLesson(assignStudentsToLessonInput: {
+    lessonId: "3e4c25ee-f879-43f8-896d-4930f3ab04ef"
+    studentIds: [
+      "e1b4e577-c8c9-4c56-8c7e-05bbe33f7355",
+      "b6836795-2238-4ff2-a682-8a378743bf28",
+      "568dbaa7-6170-4a1a-921d-6f72fa779125"
+    ]
+  }) {
+    name
+    students {
+      firstName
+    }
+  }
+}
+```
+
+### Queries
+
+```graphql
+query {
+  lesson(id: "cec57d7d-863f-4e98-a585-238749bac7c3") {
+    name
+  }
+}
+query {
+  lessons {
+    name
+  }
+}
+
+
+query {
+  student(id: "e1b4e577-c8c9-4c56-8c7e-05bbe33f7355") {
+    firstName
+  }
+}
+
+query {
+  students {
+    firstName
+  }
+}
+```
 
 <!-- ## :white_check_mark: Tests
 
