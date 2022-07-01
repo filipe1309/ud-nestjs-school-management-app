@@ -87,3 +87,16 @@ Content-Type: application/json
 #     firstName
 #   }
 # }
+
+# mutation {
+#   assignStudentsToLesson(assignStudentsToLessonInput: {
+#     lessonId: "3e4c25ee-f879-43f8-896d-4930f3ab04ef"
+#     studentIds: [
+#       "e1b4e577-c8c9-4c56-8c7e-05bbe33f7355",
+#       "b6836795-2238-4ff2-a682-8a378743bf28",
+#       "568dbaa7-6170-4a1a-921d-6f72fa779125"
+#     ]
+#   }) {
+#     name
+#   }
+# }
