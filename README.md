@@ -47,7 +47,9 @@ docker-compose up
 ```
 
 > Access http://localhost:3000  to see the application
-> Access http://localhost:3000/graphql to see the GraphQL playground  
+
+> Access http://localhost:3000/graphql to see the GraphQL playground
+
 > Access http://localhost:8081 to see the MongoDB Express  
 
 ### GraphQL examples
