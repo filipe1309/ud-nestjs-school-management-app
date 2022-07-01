@@ -11,12 +11,12 @@ export class LessonService {
     @InjectRepository(Lesson) private lessonRepository: Repository<Lesson>,
   ) {}
 
-  async getLessons(): Promise<Lesson[]> {
-    return this.lessonRepository.find();
+  async getLesson(id: string): Promise<Lesson> {
+    return this.lessonRepository.findOne({ where: { id } });
   }
 
-  async getLesson(id): Promise<Lesson> {
-    return this.lessonRepository.findOne({ where: { id } });
+  async getLessons(): Promise<Lesson[]> {
+    return this.lessonRepository.find();
   }
 
   async createLesson(createLessonInput: CreateLessonInput): Promise<Lesson> {
